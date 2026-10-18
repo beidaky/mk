@@ -65,6 +65,7 @@ td:first-child,th:first-child{text-align:left}
 th{color:var(--mute);font-size:13px}
 .late{color:var(--red)}.early{color:var(--ok)}
 .fl{margin:6px 0 0;color:var(--mute)}
+@media (min-width:760px){main{max-width:1120px;padding:24px 28px 56px}h1{font-size:25px}.tabs{max-width:380px}select{max-width:560px}.adv{font-size:15px}.grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:28px;align-items:start}.L{position:sticky;top:16px}.card{padding:26px 24px}.name{font-size:30px}.time{font-size:clamp(84px,min(11vw,22vh),150px)}.hint{font-size:16px}.ctl button{padding:16px 6px;font-size:17px}.tot{margin-top:0;font-size:15px}.seg{height:20px}li{padding:13px 6px;font-size:17px}#review{font-size:15px}}
 @media (prefers-reduced-motion:no-preference){.bar i,.sg i{transition:width .25s linear}}
 button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--acc);outline-offset:2px}
 </style></head><body><main>
@@ -72,7 +73,7 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
 <div class="tabs"><button id="t-en">英语二</button><button id="t-math">数学</button></div>
 <select id="pre" aria-label="方案"></select>
 <p class="adv" id="adv"></p>
-<section class="card" id="card">
+<div class="grid"><div class="L"><section class="card" id="card">
   <div class="meta"><div class="pills"><span class="pill" id="sc"></span><span class="pill" id="stt"></span></div>
   <div class="adj"><button id="m1" aria-label="减一分钟">−1</button><b id="pm"></b><button id="p1" aria-label="加一分钟">+1</button></div></div>
   <div class="name" id="name"></div>
@@ -81,12 +82,12 @@ button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid 
   <p class="hint" id="hint"></p>
   <div class="ctl"><button id="prev">上一项</button><button class="p" id="go">开始</button><button id="nx">完成 · 下一项</button></div>
   <div class="flag"><input id="note" placeholder="卡壳题号或备注（可不填）" maxlength="30"><button id="fl">标记</button></div>
-</section>
-<div class="tot"><span id="used"></span><span id="left"></span></div>
+</section></div>
+<div class="R"><div class="tot"><span id="used"></span><span id="left"></span></div>
 <div class="seg" id="seg"></div>
 <ol id="list"></ol>
 <div class="row"><button id="rv">用时复盘</button><button id="rs">全部重置</button></div>
-<section id="review" hidden></section>
+<section id="review" hidden></section></div></div>
 </main>
 <script>
 var HR=['先看题干定位原文，二选一纠结超 1 分钟就标记。','抓段首段尾和转折，不靠主观臆断。','生词跳过，看句间逻辑。','最后一篇守住节奏，别因赶时间乱选。'];
